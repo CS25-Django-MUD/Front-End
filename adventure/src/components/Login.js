@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { axiosWithAuth } from './axiosAuth';
+import { axiosWithAuth } from './axiosWithAuth';
 
 const Login = (props) => {
-    const [credentials, setCredentials] = useState({})
+    const [credentials, setCredentials] = useState({username: '', password: ''})
 
     const login = e => {
         e.preventDefault();
-        axiosWithAuth.post('https://lambda-mud-test.herokuapp.com/api/login/', credentials)
+        axiosWithAuth().post('https://lambda-mud-test.herokuapp.com/api/login/', credentials)
         .then(res => {
             console.log(res);
             localStorage.setItem('token', res.data.token);
-            props.history.push('/gamescreen');
+            props.history.push('/dashboard');
           })
         .catch(err => console.log(err));
       }
@@ -18,12 +18,9 @@ const Login = (props) => {
 
 
     const handleChange = event => {
-        console.log(event.target.value);
         setCredentials({
-            credentials: {
-                ...credentials,
-                [event.target.name]: event.target.value,
-            }
+            ...credentials,
+            [event.target.name]: event.target.value
             })
     };
 

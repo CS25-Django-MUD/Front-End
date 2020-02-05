@@ -15,7 +15,7 @@ function App() {
       </ul>
 
       <div>Haven't registered yet?....</div>
-      <Route path="login" component={Login} />
+      <Route path="/login" component={Login} />
       <PrivateRoute path="/dashboard" component={GameScreen} />
     </div>
     </Router>
