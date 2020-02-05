@@ -1,17 +1,24 @@
 import React from 'react';
 import './App.css';
+import Login from './components/Login';
+import PrivateRoute from './components/PrivateRoute';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import GameScreen from './components/GameScreen';
 
 function App() {
   return (
+    <Router>
     <div className="App">
       <ul className="navbar">
-        <li><a href="">Home</a></li>
-        <li><a href="">Register</a></li>
-        <li><a href="">Login</a></li>
+        <Link to="/login">Login</Link>
+        <Link to="/dashboard">Play here!</Link>
       </ul>
-      <GameScreen />
+
+      <div>Haven't registered yet?....</div>
+      <Route path="login" component={Login} />
+      <PrivateRoute path="/dashboard" component={GameScreen} />
     </div>
+    </Router>
   );
 }
 
