@@ -1,0 +1,15 @@
+.room {
+    height: 100px;
+    width: 100px;
+    background: red;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.rooms-grid {
+    display: flex;
+    align-items: center;
+}
