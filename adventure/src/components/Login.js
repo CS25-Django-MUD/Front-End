@@ -6,10 +6,10 @@ const Login = (props) => {
 
     const login = e => {
         e.preventDefault();
+        // Test server
+        // axiosWithAuth().post('https://lambda-mud-test.herokuapp.com/api/login/', credentials)
         //Deployed server
         axiosWithAuth().post('https://cs25-mud.herokuapp.com/api/login/', credentials)
-        //Test server
-        // axiosWithAuth().post('https://lambda-mud-test.herokuapp.com/api/login/', credentials)
         .then(res => {
             console.log(res);
             localStorage.setItem('token', res.data.token);
@@ -17,7 +17,6 @@ const Login = (props) => {
           })
         .catch(err => console.log(err));
       }
-
 
 
     const handleChange = event => {
