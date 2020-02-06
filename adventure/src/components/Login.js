@@ -12,7 +12,8 @@ const Login = (props) => {
         axiosWithAuth().post('https://cs25-mud.herokuapp.com/api/login/', credentials)
         .then(res => {
             console.log(res);
-            localStorage.setItem('token', res.data.token);
+            props.setUserCreds(res);
+            localStorage.setItem('token', res.data.key);
             props.history.push('/dashboard');
           })
         .catch(err => console.log(err));

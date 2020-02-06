@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import axiosWithAuth from './axiosWithAuth';
 
-const Register = () => {
+const Register = (props) => {
     const [credentials, setCredentials] = useState({username: '', password1: '', password2: ''});
-
     const changeHandler = e => {
         setCredentials({
           ...credentials, 
@@ -14,11 +13,13 @@ const Register = () => {
     const signupHandler = e => {
         e.preventDefault();
         //Deployed server
+        console.log("props are: ", props)
         axiosWithAuth().post('https://cs25-mud.herokuapp.com/api/registration/', credentials)
         //Test server
         // axiosWithAuth().post('https://lambda-mud-test.herokuapp.com/api/registration/', credentials)
         .then(res => {
           console.log('Logged in result', res);
+          props.setUserCreds(res);
       })
         .catch(err => {
         console.log(err)

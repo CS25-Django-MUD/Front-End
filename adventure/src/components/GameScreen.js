@@ -13,7 +13,6 @@ const GameScreen = (props) => {
         ))
     }
 
-
     return (
         <>
         {allrooms}
