@@ -14,6 +14,7 @@ const GameContainer = () => {
         axiosWithAuth().get('https://cs25-mud.herokuapp.com/api/adv/rooms/')
         .then(res => {
             setRooms(res);
+            console.log(res);
             })
         .catch(err => console.log(err));
         }
