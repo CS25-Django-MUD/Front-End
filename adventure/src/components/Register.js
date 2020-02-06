@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import axiosWithAuth from './axiosWithAuth';
 
 const Register = () => {
-
     const [credentials, setCredentials] = useState({username: '', password1: '', password2: ''});
 
     const changeHandler = e => {
