@@ -8,8 +8,13 @@
     justify-content: center;
 }
 
+.room-div {
+    display: flex;
+    align-items: center;
+}
 
 .rooms-grid {
     display: flex;
     align-items: center;
+    width: 2000px;
 }
