@@ -8,6 +8,16 @@
     justify-content: center;
 }
 
+.starter-room {
+    height: 100px;
+    width: 100px;
+    background: blue;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .room-div {
     display: flex;
     align-items: center;
@@ -22,4 +32,9 @@
 .game-container {
     display: flex;
     flex-direction: column;
+}
+
+.direction-button {
+    border-radius: 50px;
+    background: pink;
 }

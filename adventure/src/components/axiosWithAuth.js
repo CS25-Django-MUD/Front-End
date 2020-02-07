@@ -6,9 +6,19 @@ export const axiosWithAuth = () => {
     return axios.create({
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Token ${token}`,
+            'Authorization': `${token}`,
         },
     });
 };
 
-export default axiosWithAuth;
+
+export const axiosWithAuthToken = () => {
+    const token = localStorage.getItem('token');
+
+    return axios.create({
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Token ${token}`,
+        },
+    });
+};
