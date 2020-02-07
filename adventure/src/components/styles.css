@@ -20,13 +20,16 @@
 
 .room-div {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    /* border: 1px solid orange; */
 }
 
 .rooms-grid {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    width: 2000px;
+    width: 100%;
 }
 
 .game-container {
