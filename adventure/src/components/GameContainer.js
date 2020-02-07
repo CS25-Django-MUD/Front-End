@@ -16,7 +16,6 @@ const GameContainer = (props) => {
         .then(res => {
             // let myRooms = res.data.sort((a, b) => (a.id > b.id) ? 1 : -1)
             setRooms(res);
-            console.log(res);
             })
         .catch(err => console.log(err));
         }
@@ -40,6 +39,10 @@ const GameContainer = (props) => {
         axiosWithAuthToken().post('https://cs25-mud.herokuapp.com/api/adv/move', direction)
         .then(res => {
             console.log(res)
+            let roomid = res.data.roomid
+            setPlayerRoom(roomid);
+            // Assuming player moved in the right direction, set new current room ID to state.
+            // setPlayerRoom(res.data.id)
         })
         .catch(err => console.log(err));
         // currentRoom = rooms.data.filter(i => {
