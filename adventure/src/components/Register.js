@@ -20,6 +20,7 @@ const Register = (props) => {
         .then(res => {
           console.log('Logged in result', res);
           props.setUserCreds(res);
+          props.history.push('/login')
       })
         .catch(err => {
         console.log(err)
