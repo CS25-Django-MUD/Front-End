@@ -29,35 +29,38 @@ const Register = (props) => {
 
     return (
         <div>
-            <form onSubmit={signupHandler}>
-                <label>Username: 
-                <input
-                type="text"
-                name="username"
-                value={credentials.username}
-                onChange={changeHandler}
-                >
-                </input>
-                </label>
+          <h1>REGISTER</h1>
+          <form onSubmit={signupHandler}>
+              <label>Username: 
+              <input
+              type="text"
+              name="username"
+              value={credentials.username}
+              onChange={changeHandler}
+              >
+              </input>
+              </label>
 
-                <label>Password: 
-                <input
-                type="password"
-                name='password1'
-                value={credentials.password1}
-                onChange={changeHandler}>
-                </input>
+              <label>Password: 
+              <input
+              type="password"
+              name='password1'
+              value={credentials.password1}
+              onChange={changeHandler}>
+              </input>
+              </label>
+              
+              <label>Confirm Password
+              <input
+              type="password"
+              name='password2'
+              value={credentials.password2}
+              onChange={changeHandler}>
+              </input>
+              </label>
 
-                <input
-                type="password"
-                name='password2'
-                value={credentials.password2}
-                onChange={changeHandler}>
-                </input>
-
-                </label>
-                <button type="submit">Register</button>
-            </form>
+              <button type="submit">Register</button>
+          </form>
         </div>
     )
 }
