@@ -28,7 +28,8 @@ const Login = (props) => {
     };
 
     return (
-        <div>
+      <div>
+        <h1>LOGIN</h1>
         <form onSubmit={login}>
           <label> Username
             <input
