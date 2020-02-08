@@ -20,6 +20,7 @@ const Register = (props) => {
         .then(res => {
           console.log('Logged in result', res);
           props.setUserCreds(res);
+          props.history.push('/login')
       })
         .catch(err => {
         console.log(err)
@@ -28,35 +29,44 @@ const Register = (props) => {
 
     return (
         <div>
-            <form onSubmit={signupHandler}>
-                <label>Username: 
-                <input
-                type="text"
-                name="username"
-                value={credentials.username}
-                onChange={changeHandler}
-                >
-                </input>
-                </label>
+          <h1>REGISTER</h1>
+          <form className="register-form" onSubmit={signupHandler}>
+              <div>
+              <label>Username: 
+              <input
+              type="text"
+              name="username"
+              value={credentials.username}
+              onChange={changeHandler}
+              >
+              </input>
+              </label>
+              </div>
 
-                <label>Password: 
-                <input
-                type="password"
-                name='password1'
-                value={credentials.password1}
-                onChange={changeHandler}>
-                </input>
+              <div> 
+              <label>Password: 
+              <input
+              type="password"
+              name='password1'
+              value={credentials.password1}
+              onChange={changeHandler}>
+              </input>
+              </label>
+              </div>
+              
+              <div>
+              <label>Confirm Password: 
+              <input
+              type="password"
+              name='password2'
+              value={credentials.password2}
+              onChange={changeHandler}>
+              </input>
+              </label>
+              </div>
 
-                <input
-                type="password"
-                name='password2'
-                value={credentials.password2}
-                onChange={changeHandler}>
-                </input>
-
-                </label>
-                <button type="submit">Register</button>
-            </form>
+              <button type="submit">Register</button>
+          </form>
         </div>
     )
 }

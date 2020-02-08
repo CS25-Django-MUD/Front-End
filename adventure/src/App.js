@@ -9,9 +9,9 @@ import GameContainer from './components/GameContainer';
 function App() {
  const [usercreds, setUserCreds] = useState();
   
- useEffect(() => {
-  //  console.log("From app: ", usercreds)
-}, [usercreds]);
+ useEffect(() => { 
+
+ }, [usercreds]);
 
   return (
     <Router>
@@ -22,8 +22,10 @@ function App() {
         <Link to="/dashboard">Play here!</Link>
       </ul>
 
-      <Route path="/login" render={() => (<Login setUserCreds={setUserCreds}/>)}  />
-      <Route path="/register" render={() => (<Register setUserCreds={setUserCreds}/>) }   />
+    <h1>Escape From The Cave!</h1>
+      
+      <Route path="/login" render={(props) => (<Login {...props} setUserCreds={setUserCreds}/>)}  />
+      <Route path="/register" render={(props) => (<Register {...props} setUserCreds={setUserCreds}/>) }   />
       <PrivateRoute path="/dashboard" component={GameContainer} usercreds={usercreds}/>
     </div>
     </Router>
