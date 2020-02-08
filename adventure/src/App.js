@@ -22,8 +22,10 @@ function App() {
         <Link to="/dashboard">Play here!</Link>
       </ul>
 
+
     <h1>Escape From The Cave!</h1>
       
+
       <Route path="/login" render={(props) => (<Login {...props} setUserCreds={setUserCreds}/>)}  />
       <Route path="/register" render={(props) => (<Register {...props} setUserCreds={setUserCreds}/>) }   />
       <PrivateRoute path="/dashboard" component={GameContainer} usercreds={usercreds}/>
