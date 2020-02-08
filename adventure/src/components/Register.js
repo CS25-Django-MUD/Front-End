@@ -30,7 +30,10 @@ const Register = (props) => {
     return (
         <div>
           <h1>REGISTER</h1>
-          <form onSubmit={signupHandler}>
+
+          <form className="register-form" onSubmit={signupHandler}>
+              <div>
+
               <label>Username: 
               <input
               type="text"
@@ -41,6 +44,10 @@ const Register = (props) => {
               </input>
               </label>
 
+              </div>
+
+              <div> 
+
               <label>Password: 
               <input
               type="password"
@@ -49,8 +56,12 @@ const Register = (props) => {
               onChange={changeHandler}>
               </input>
               </label>
+
+              </div>
               
-              <label>Confirm Password
+              <div>
+              <label>Confirm Password: 
+
               <input
               type="password"
               name='password2'
@@ -58,6 +69,9 @@ const Register = (props) => {
               onChange={changeHandler}>
               </input>
               </label>
+
+              </div>
+
 
               <button type="submit">Register</button>
           </form>
